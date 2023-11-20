@@ -1,3 +1,5 @@
+const g=5;
+
 console.log('hello');
 
 const a = [1,2,3];
