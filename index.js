@@ -1,22 +1,13 @@
-import index from './index.html';
-
-const size=5;
-
-console.log(size);
-
-console.log(size * 7);
-
-console.log('hello');
-
-console.log('newNechama');
-
-console.log('conflict');
-const array = [1, 2, 3];
-
-console.log(array);
-
-console.log(index.toString());
-
-console.log('first');
-
-console.log('second conflict');
+console.log('remove all');
+var fs = require('fs');
+var path = require('path');
+var dir = path.join(__dirname, 'tmp');
+fs.readdir(dir, function(err, files) {
+  if (err) throw err;
+  for (var i = 0; i < files.length; i++) {
+    fs.unlink(path.join(dir, files[i]), function(err) {
+      if (err) throw err;
+      console.log('successfully deleted');
+    });
+  }
+});
